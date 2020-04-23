@@ -1,0 +1,10 @@
+.disclaimer-container {
+	padding: 15px;
+	background-color: aliceblue;
+	border-radius: 10px;
+	margin-bottom: 20;
+}
+.disclaimer-text {
+	justify-content: center;
+	color: #212121;
+}
