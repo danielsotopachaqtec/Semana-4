@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Title from './Components/Title/Title';
-import { Button } from './Components/Button/Button';
+import Button from './Components/Button/Button';
 import Disclaimer from './Components/Disclaimer/Disclaimer';
 
 class App extends Component {
@@ -23,8 +23,6 @@ class App extends Component {
 	onSubmitMessage = (e) => {
 		e.preventDefault();
 		if (this.state.text.length === 0) {
-			console.log('this.state.text', this.state.text);
-			console.log('e.target.value', e.target.value);
 			return;
 		} else {
 			this.setState({
@@ -42,23 +40,7 @@ class App extends Component {
 					<img src={logo} className='App-logo' alt='logo' />
 					<Title title={'Hola, bienvenido al mundo de React'} />
 					{display ? <Disclaimer text={text} /> : null}
-					{!submitted ? (
-						<form
-							className='form-container'
-							onSubmit={this.onSubmitMessage}
-						>
-							<label className='label-form' htmlFor='new-message'>
-								Escribe un mensaje para tus compañeros
-							</label>
-							<input
-								className='input-form'
-								id='new-message'
-								onChange={this.onChangeText}
-								value={this.state.text}
-							/>
-							<Button textButton={'Haz click al botón'} />
-						</form>
-					) : null}
+					<Button />
 				</header>
 			</div>
 		);
